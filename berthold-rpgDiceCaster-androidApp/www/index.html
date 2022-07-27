@@ -1,0 +1,1194 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">        
+    <title>Lancers de Berthold</title>    
+
+    <style>
+        body {
+            background-image: url('img/berthold.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+            height: 120px;     
+            background-color: rgb(15, 15, 15);
+            margin-top: 0;
+
+        }
+
+        .blocImageEnTete {
+                
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-rows: 60px auto;
+                                
+
+        }
+
+        .titreBertholdImage1 {
+            grid-row: 1;
+            grid-column: 1/4;
+            text-align: center;
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+            font-weight: lighter;
+            font-size: 250%;
+            margin-top: 10px;
+            color: rgb(122, 94, 153);
+        }
+
+        .titreBertholdImage2 {
+            grid-row: 2;
+            grid-column: 1/4;
+            text-align: center;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;            
+            color: rgb(93, 101, 168);
+        }
+
+
+        .buttonsBox {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            row-gap: 5px;
+            column-gap: 10px;
+            grid-template-rows: repeat(4, 40px);            
+            margin-left: 5px;
+            margin-right: 5px;
+            margin-bottom: 20px;
+            margin-top: 202px;
+        }
+
+        .skillButtons0 {
+            border-radius: 0;
+            border: 0;
+            background-color: rgb(67, 82, 151);
+            color: rgb(255, 255, 255);
+            border: 2px solid black;
+            border-radius: 40px;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            opacity: 68%;
+
+        }
+
+        .skillButtons0:hover {
+            background-color: rgb(108, 123, 189);
+            cursor: pointer;
+        }
+
+        .competences {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: repeat(16, 40px);
+            margin: 5px;
+        }
+
+        .skillButtons {
+            border-radius: 0;
+            border: 0;
+            background-color: rgb(48, 48, 48);
+            color: rgb(255, 255, 255);
+            border: 2px solid black;
+            font-family: Verdana, Geneva, Tahoma, sans-serif
+        }
+
+        .skillButtons2 {
+            border-radius: 0;
+            border: 0;
+            background-color: rgb(67, 41, 75);
+            color: rgb(255, 255, 255);
+            border: 2px solid black;
+            font-family: Verdana, Geneva, Tahoma, sans-serif
+        }
+
+        .skillButtons:hover {
+            background-color: rgb(105, 105, 105);
+            cursor: pointer;
+        }
+
+        .skillButtons2:hover {
+            background-color: rgb(119, 76, 133);
+            cursor: pointer;
+        }
+
+        .okFlex {
+            display: flex;
+            justify-content: center;
+            height: 60px;
+            margin-top: 8px;
+            margin-bottom: 10px;
+        }
+
+        #ok {
+            background-color: rgb(101, 202, 0);
+            box-shadow: rgb(207, 207, 207);
+            font-size: x-large;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            color: black;
+            width: 200px;
+            border-bottom: solid 5px chartreuse;
+            border-right: solid 4px chartreuse;
+            border-left: 3px darkgreen;
+            border-top: 2px yellowgreen;
+            border-radius: 40px;
+            font-weight: bolder;
+        }
+
+        #ok:active {
+            transform: translateY(3px);
+            background-color: chartreuse;
+            border-bottom: solid 5px darkgreen;
+            border-right: solid 4px darkgreen;
+            border-left: 3px rgb(0, 90, 0);
+            border-top: 2px rgb(0, 68, 0);
+        }
+
+        .scoreDe {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            grid-template-rows: 60px 40px 20px;
+            margin-top: 8px;
+            margin: 5px;
+            border: 2px outset rgb(37, 37, 37);
+            background-color: rgb(211, 211, 211);
+            padding-bottom: 10px;
+        }
+
+        #de1 {
+            color: rgb(80, 0, 100);
+            text-shadow: rgb(77, 77, 77) 1px 1px;
+            grid-row: 1;
+            grid-column: 2/3;
+            text-align: right;
+            font-size: 360%;
+            margin: 0;
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+            padding-right: 1px;
+        }
+
+        #de2 {
+            color: rgb(15, 15, 15);
+            text-shadow: rgb(77, 77, 77) 1px 1px;
+            grid-row: 1;
+            grid-column: 3/4;
+            text-align: left;
+            font-size: 360%;
+            margin: 0;
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+            padding-left: 1px;
+        }
+
+        #commentaire {
+            grid-row: 2;
+            grid-column: 2/4;
+            text-align: center;
+            margin: 0;
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+            font-weight: normal;
+            text-shadow: black 2px 2px 2px;
+        }
+
+        #result {
+            color: black;
+            grid-row: 3;
+            grid-column: 1/5;
+            text-align: center;
+            margin: 0;
+            text-shadow: 1px 0 0 rgb(0, 0, 0);
+        }
+
+        .flexRefresh {
+            grid-row: 1;
+            grid-column: 4/5;
+            display: flex;
+            flex-direction: row;
+            justify-content: end;
+        }
+
+        #refreshButton {
+            color: rgb(235, 235, 235);
+            background-color: rgb(182, 182, 182);
+            height: 30px;
+            border-radius: 60px;
+            width: 80px;
+            border: solid 1px rgb(151, 151, 151);
+            border-bottom: solid 3px rgb(151, 151, 151);
+            border-right: solid rgb(151, 151, 151);
+            margin-top: 4px;
+            margin-right: 4px;
+        }
+
+        #refreshButton:active {
+            transform: translateY(3px);
+            background-color:rgb(151, 151, 151);
+            border: solid 1px rgb(182, 182, 182);
+            border-bottom: solid 3px rgb(182, 182, 182);
+            border-right: solid 4px rgb(182, 182, 182);
+        }
+
+        .caracteristiques,
+        .secondaire,
+        .stats {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: auto;
+            border: 3px outset rgb(92, 92, 92);
+            margin: 5px;
+        }
+
+        .titre {
+            grid-row: 1;
+            grid-column: 1/3;
+            color: rgb(70, 75, 119);
+            text-align: center;
+
+        }
+
+        .bloc1,
+        .bloc2 {
+            padding: 0;
+        }
+
+        /*TABLEAU CARACS*/
+        li {
+            list-style-type: none;
+            color: aliceblue;
+            text-align: center;
+            padding-top: 7px;
+            padding-bottom: 7px;
+            text-transform: uppercase;
+            font-size: smaller;
+        }
+
+        #c1,
+        #c3,
+        #c5,
+        #c7,
+        #ccScore,
+        #fScore,
+        #agScore,
+        #fmScore {
+            grid-row: 1;
+            grid-column: 1/2;
+            background-color: rgb(67, 82, 151);
+
+        }
+
+        /* SECONDAIRE*/
+        #pr1,
+        #pr3,
+        #pr5,
+        #pr7,
+        #pr1Score,
+        #pr3Score,
+        #pr5Score,
+        #pr7Score {
+            grid-row: 1;
+            grid-column: 1/2;
+            background-color: rgb(194, 80, 39)
+        }
+
+        /*TABLEAU SKILLS*/
+        #s1,
+        #s3,
+        #s5,
+        #s7,
+        #s9,
+        #s11,
+        #s13,
+        #s15,
+        #s17,
+        #s19,
+        #canotageScore,
+        #commandementScore,
+        #conduiteAttelagesScore,
+        #deplacementSilencieuxScore,
+        #equitationScore,
+        #evaluationScore,
+        #intimidationScore,
+        #marchandageScore,
+        #perceptionScore,
+        #soinAnimauxScore {
+            grid-row: 1;
+            grid-column: 1/2;
+            background-color: rgb(66, 66, 66);
+
+        }
+
+        #s21,
+        #s23,
+        #s25,
+        #s27,
+        #s29,
+        #s31,
+        #connMagieScore,
+        #connNecromancieScore,
+        #langueCommunScore,
+        #langueMystiqueScore,
+        #lireEcrireScore,
+        #metierMaconScore {
+            background-color: rgb(67, 41, 75);
+        }
+
+        .xpFlex {
+            grid-column: 1/3;
+            display: flex;
+            justify-content: center;
+            margin-bottom: 8px;
+
+        }
+
+        #boutonXp {
+            width: 200px;
+            height: 60px;
+            border-radius: 40px;
+            background-color: rgb(101, 202, 0);
+            border-bottom: solid 5px chartreuse;
+            border-right: solid 4px chartreuse;
+            border-left: 3px darkgreen;
+            border-top: 2px yellowgreen;
+            border-radius: 40px;
+            font-weight: bolder;
+            font-size: large;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        }
+
+        #boutonXp:active {
+            transform: translateY(3px);
+            background-color: chartreuse;
+            border-bottom: solid 5px darkgreen;
+            border-right: solid 4px darkgreen;
+            border-left: 3px rgb(0, 90, 0);
+            border-top: 2px rgb(0, 68, 0);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="blocImageEnTete">
+        <h1 class="titreBertholdImage1">BERTHOLD BRAVIN</h1>
+        <h2 class="titreBertholdImage2">SORCIER BRASSEUR</h2>
+    </div>
+    <div class="buttonsBox">
+        <button class="skillButtons0" id="ccButtonId" onclick="ccButton()">COMBAT</button>
+        <button class="skillButtons0" id="ctButtonId" onclick="ctButton()">TIR</button>
+        <button class="skillButtons0" id="fButtonId" onclick="fButton()">FORCE</button>
+        <button class="skillButtons0" id="eButtonId" onclick="eButton()">ENDURANCE</button>
+        <button class="skillButtons0" id="agButtonId" onclick="agButton()">AGILITÉ</button>
+        <button class="skillButtons0" id="intButtonId" onclick="intButton()">INTELLIGENCE</button>
+        <button class="skillButtons0" id="fmButtonId" onclick="fmButton()">FORCE MENTALE</button>
+        <button class="skillButtons0" id="socButtonId" onclick="socButton()">SOCIABILITÉ</button>
+    </div>
+    <div class="competences">
+        <button class="skillButtons" id="canotageId" onclick="canotage()">CANOTAGE</button>
+        <button class="skillButtons" id="charismeId" onclick="charisme()">CHARISME</button>
+        <button class="skillButtons" id="commandementId" onclick="commandement()">COMMANDEMENT</button>
+        <button class="skillButtons" id="commeragesId" onclick="commerages()">COMMÉRAGES</button>
+        <button class="skillButtons" id="conduiteAttelagesId" onclick="conduiteAttelages()">CONDUITE
+            D'ATTELAGES</button>
+        <button class="skillButtons" id="deguisementId" onclick="deguisement()">DÉGUISEMENT</button>
+        <button class="skillButtons" id="deplacementSilencieuxId" onclick="deplacementSilencieux()">DÉPLACEMENT
+            SIL.</button>
+        <button class="skillButtons" id="dissimulationId" onclick="dissimulation()">DISSIMULATION</button>
+        <button class="skillButtons" id="equitationId" onclick="equitation()">ÉQUITATION</button>
+        <button class="skillButtons" id="escaladeId" onclick="escalade()">ESCALADE</button>
+        <button class="skillButtons" id="evaluationId" onclick="evaluation()">ÉVALUATION</button>
+        <button class="skillButtons" id="fouilleId" onclick="fouille()">FOUILLE</button>
+        <button class="skillButtons" id="intimidationId" onclick="intimidation()">INTIMIDATION</button>
+        <button class="skillButtons" id="jeuId" onclick="jeu()">JEU</button>
+        <button class="skillButtons" id="marchandageId" onclick="marchandage()">MARCHANDAGE</button>
+        <button class="skillButtons" id="natationId" onclick="natation()">NATATION</button>
+        <button class="skillButtons" id="perceptionId" onclick="perception()">PERCEPTION</button>
+        <button class="skillButtons" id="resistanceAlcoolId" onclick="resistanceAlcool()">RÉSISTANCE ALCOOL</button>
+        <button class="skillButtons" id="soinAnimauxId" onclick="soinAnimaux()">SOIN DES ANIMAUX</button>
+        <button class="skillButtons" id="survieId" onclick="survie()">SURVIE</button>
+
+        <button class="skillButtons2" id="connMagieId" onclick="connMagie()">CONN. MAGIE</button>
+        <button class="skillButtons2" id="connNainsId" onclick="connNains()">CONN. NAINS</button>
+        <button class="skillButtons2" id="connNecromancieId" onclick="connNecromancie()">CONN. ILLUSION</button>
+        <button class="skillButtons2" id="focalisationId" onclick="focalisation()">FOCALISATION</button>
+        <button class="skillButtons2" id="langueClassiqueId" onclick="langueClassique()">LANGUE (CLASSIQUE)</button>
+        <button class="skillButtons2" id="langueCommunId" onclick="langueCommun()">LANGUE (COMMUN)</button>
+        <button class="skillButtons2" id="langueMystiqueId" onclick="langueMystique()">LANGUE MYSTIQUE</button>
+        <button class="skillButtons2" id="langueNainId" onclick="langueNain()">LANGUE (NAIN)</button>
+        <button class="skillButtons2" id="lireEcrireId" onclick="lireEcrire()">LIRE & ÉCRIRE</button>
+        <button class="skillButtons2" id="metierBrasseurId" onclick="metierBrasseur()">MÉTIER (BRASSEUR)</button>
+        <button class="skillButtons2" id="metierMaconId" onclick="metierMacon()">MÉTIER (MAÇON)</button>
+        <button class="skillButtons2" id="sensMagieId" onclick="sensMagie()">SENS DE LA MAGIE</button>
+
+
+    </div>
+    <div class="okFlex">
+        <button id="ok" onclick="envoyer()">LANCER</button>
+
+    </div>
+
+    <div class="scoreDe">
+        <h1 id="de1"></h1>
+
+        <h1 id="de2"></h1>
+
+        <h1 id="commentaire"></h1>
+
+        <p id="result"></p>
+        <div class="flexRefresh">
+            <button id="refreshButton" onclick="refresh()">Rafraîchir</button>
+        </div>
+    </div>
+
+    <div class="caracteristiques">
+        <h2 class="titre"> PROFIL PRINCIPAL</h2>
+        <ul class="bloc1">
+            <li id="c1">CC</li>
+            <li id="c2">CT</li>
+            <li id="c3">F</li>
+            <li id="c4">E</li>
+            <li id="c5">AG</li>
+            <li id="c6">INT</li>
+            <li id="c7">FM</li>
+            <li id="c8">SOC</li>
+        </ul>
+        <ul class="bloc2">
+            <li id="ccScore"></li>
+            <li id="ctScore"></li>
+            <li id="fScore"></li>
+            <li id="eScore"></li>
+            <li id="agScore"></li>
+            <li id="intScore"></li>
+            <li id="fmScore"></li>
+            <li id="socScore"></li>
+        </ul>
+    </div>
+
+    <div class="secondaire">
+        <h2 class="titre">PROFIL SECONDAIRE</h2>
+        <ul class="bloc1">
+            <li id="pr1">A</li>
+            <li id="pr2">B</li>
+            <li id="pr3">BF</li>
+            <li id="pr4">BE</li>
+            <li id="pr5">M</li>
+            <li id="pr6">MAG</li>
+            <li id="pr7">PF</li>
+            <li id="pr8">PD</li>
+        </ul>
+        <ul class="bloc2">
+            <li id="pr1Score"></li>
+            <li id="pr2Score"></li>
+            <li id="pr3Score"></li>
+            <li id="pr4Score"></li>
+            <li id="pr5Score"></li>
+            <li id="pr6Score"></li>
+            <li id="pr7Score"></li>
+            <li id="pr8Score"></li>
+        </ul>
+    </div>
+
+    <div class="stats">
+        <h2 class="titre">COMPÉTENCES</h2>
+        <ul class="bloc1">
+            <li id="s1">Canotage</li>
+            <li id="s2">Charisme</li>
+            <li id="s3">Commandement</li>
+            <li id="s4">Commérages</li>
+            <li id="s5">Conduite d'attelages</li>
+            <li id="s6">Déguisement</li>
+            <li id="s7">Déplacement sil.</li>
+            <li id="s8">Dissimulation</li>
+            <li id="s9">Équitation</li>
+            <li id="s10">Escalade</li>
+            <li id="s11">Evaluation</li>
+            <li id="s12">Fouille</li>
+            <li id="s13">Intimidation</li>
+            <li id="s14">Jeu</li>
+            <li id="s15">Marchandage</li>
+            <li id="s16">Natation</li>
+            <li id="s17">Perception</li>
+            <li id="s18">Résistance à l'alcool</li>
+            <li id="s19">Soin des animaux</li>
+            <li id="s20">Survie</li>
+
+            <li id="s21">Conn. magie</li>
+            <li id="s22">Conn. nains</li>
+            <li id="s23">Conn. illusion</li>
+            <li id="s24">Focalisation</li>
+            <li id="s25">Langue commune</li>
+            <li id="s26">Langue classique</li>
+            <li id="s27">Langue mystique</li>
+            <li id="s28">Langue naine</li>
+            <li id="s29">Lire & écrire</li>
+            <li id="s30">Métier (brasseur)</li>
+            <li id="s31">Métier (Maçon)</li>
+            <li id="s32">Sens de la magie</li>
+        </ul>
+
+        <ul class="bloc2">
+            <li id="canotageScore"></li>
+            <li id="charismeScore"></li>
+            <li id="commandementScore"></li>
+            <li id="commeragesScore"></li>
+            <li id="conduiteAttelagesScore"></li>
+            <li id="deguisementScore"></li>
+            <li id="deplacementSilencieuxScore"></li>
+            <li id="dissimulationScore"></li>
+            <li id="equitationScore"></li>
+            <li id="escaladeScore"></li>
+            <li id="evaluationScore"></li>
+            <li id="fouilleScore"></li>
+            <li id="intimidationScore"></li>
+            <li id="jeuScore"></li>
+            <li id="marchandageScore"></li>
+            <li id="natationScore"></li>
+            <li id="perceptionScore"></li>
+            <li id="resistanceAlcoolScore"></li>
+            <li id="soinAnimauxScore"></li>
+            <li id="survieScore"></li>
+            <li id="connMagieScore"></li>
+            <li id="connNainsScore"></li>
+            <li id="connNecromancieScore"></li>
+            <li id="focalisationScore"></li>
+            <li id="langueCommunScore"></li>
+            <li id="langueClassiqueScore"></li>
+            <li id="langueMystiqueScore"></li>
+            <li id="langueNainScore"></li>
+            <li id="lireEcrireScore"></li>
+            <li id="metierBrasseurScore"></li>
+            <li id="metierMaconScore"></li>
+            <li id="sensMagieScore"></li>
+        </ul>
+    </div>
+    <!--
+    <div class="stats">
+        <h2 class="titre">EXPÉRIENCE</h2>
+        <ul class="bloc1">
+            <li id="xp1">Valeur XP disponible</li>
+            <li id="xp2">Valeur XP dépensée</li>
+            <li id="xp3">Valeur XP totale</li>
+        </ul>
+        <ul class="bloc2">
+            <li id="xpDisponible"></li>
+            <li id="xpDepense"></li>
+            <li id="xpTotal"></li>
+        </ul>
+        <div class="xpFlex">
+            <button id="boutonXp" onclick="gainXp()">Gain d'expérience</button>
+        </div>
+    </div>
+-->
+
+
+
+</body>
+
+<script>
+    let carac = "";
+    let barem = "";
+    let stat = "";
+    const common = document.querySelectorAll(".skillButtons0, .skillButtons, .skillButtons2");
+
+
+    let cc = 40;
+    document.getElementById("ccScore").innerHTML = cc;
+    let ct = 36;
+    document.getElementById("ctScore").innerHTML = ct;
+    let f = 28;
+    document.getElementById("fScore").innerHTML = f;
+    let e = 46;
+    document.getElementById("eScore").innerHTML = e;
+    let ag = 31;
+    document.getElementById("agScore").innerHTML = ag;
+    let int = 63;
+    document.getElementById("intScore").innerHTML = int;
+    let fm = 46;
+    document.getElementById("fmScore").innerHTML = fm;
+    let soc = 21;
+    document.getElementById("socScore").innerHTML = soc;
+
+    let a = 1;
+    document.getElementById("pr1Score").innerHTML = a;
+    let b = 14;
+    document.getElementById("pr2Score").innerHTML = b;
+    let bf = 2;
+    document.getElementById("pr3Score").innerHTML = bf;
+    let be = 4;
+    document.getElementById("pr4Score").innerHTML = be;
+    let m = 3;
+    document.getElementById("pr5Score").innerHTML = m;
+    let mag = 2;
+    document.getElementById("pr6Score").innerHTML = mag;
+    let pf = 5;
+    document.getElementById("pr7Score").innerHTML = pf;
+    let pd = 1;
+    document.getElementById("pr8Score").innerHTML = pd;
+
+    const canotageX = document.getElementById("canotageId");
+    let canoStat = "-50%";
+    document.getElementById("canotageScore").innerHTML = canoStat;
+
+    const charismeX = document.getElementById("charismeId");
+    let chariStat = "-50%";
+    document.getElementById("charismeScore").innerHTML = chariStat;
+
+    const commandementX = document.getElementById("commandementId");
+    let commaStat = "-50%";
+    document.getElementById("commandementScore").innerHTML = commaStat;
+
+    const commeragesX = document.getElementById("commeragesId");
+    let commeStat = "-50%";
+    document.getElementById("commeragesScore").innerHTML = commeStat;
+
+    const conduiteAttelagesX = document.getElementById("conduiteAttelagesId");
+    let conduStat = "-50%";
+    document.getElementById("conduiteAttelagesScore").innerHTML = conduStat;
+
+    const deguisementX = document.getElementById("deguisementId");
+    let deguiStat = "-50%";
+    document.getElementById("deguisementScore").innerHTML = deguiStat;
+
+    const deplacementSilencieuxX = document.getElementById("deplacementSilencieuxId");
+    let deplaStat = "-50%";
+    document.getElementById("deplacementSilencieuxScore").innerHTML = deplaStat;
+
+    const dissimulationX = document.getElementById("dissimulationId");
+    let dissimStat = "-50%";
+    document.getElementById("dissimulationScore").innerHTML = dissimStat;
+
+    const equitationX = document.getElementById("equitationId");
+    let equitStat = "-50%";
+    document.getElementById("equitationScore").innerHTML = equitStat;
+
+    const escaladeX = document.getElementById("escaladeId");
+    let escalStat = "-50%";
+    document.getElementById("escaladeScore").innerHTML = escalStat;
+
+    const evaluationX = document.getElementById("evaluationId");
+    let evaluStat = "-50%";
+    document.getElementById("evaluationScore").innerHTML = evaluStat;
+
+    const fouilleX = document.getElementById("fouilleId");
+    let fouilStat = "Acquis";
+    document.getElementById("fouilleScore").innerHTML = fouilStat;
+
+    const intimidationX = document.getElementById("intimidationId");
+    let intimStat = "-50%";
+    document.getElementById("intimidationScore").innerHTML = intimStat;
+
+    const jeuX = document.getElementById("jeuId");
+    let jeuStat = "-50%";
+    document.getElementById("jeuScore").innerHTML = jeuStat;
+
+    const marchandageX = document.getElementById("marchandageId");
+    let marchStat = "-50%";
+    document.getElementById("marchandageScore").innerHTML = marchStat;
+
+    const natationX = document.getElementById("natationId");
+    let natatStat = "-50%";
+    document.getElementById("natationScore").innerHTML = natatStat;
+
+    const perceptionX = document.getElementById("perceptionId");
+    let perceStat = "Acquis";
+    document.getElementById("perceptionScore").innerHTML = perceStat;
+
+    const resistanceAlcoolX = document.getElementById("resistanceAlcoolId");
+    resisStat = "-50%";
+    document.getElementById("resistanceAlcoolScore").innerHTML = resisStat;
+
+    const soinAnimauxX = document.getElementById("soinAnimauxId");
+    let soinAStat = "-50%";
+    document.getElementById("soinAnimauxScore").innerHTML = soinAStat;
+
+    const survieX = document.getElementById("survieId");
+    let surviStat = "-50%";
+    document.getElementById("survieScore").innerHTML = surviStat;
+
+    const connMagieX = document.getElementById("connMagieId");
+    let connMagieStat = "Acquis";
+    document.getElementById("connMagieScore").innerHTML = connMagieStat;
+
+    const connNainsX = document.getElementById("connNainsId");
+    let connNainsStat = "Acquis";
+    document.getElementById("connNainsScore").innerHTML = connNainsStat;
+
+    const connNecromancieX = document.getElementById("connNecromancieId");
+    let connNecromancieStat = "Acquis";
+    document.getElementById("connNecromancieScore").innerHTML = connNecromancieStat;
+
+    const focalisationX = document.getElementById("focalisationId");
+    let focalisationStat = "Acquis";
+    document.getElementById("focalisationScore").innerHTML = focalisationStat;
+
+    const langueClassiqueX = document.getElementById("langueClassiqueId");
+    let langueClassiqueStat = "Acquis";
+    document.getElementById("langueClassiqueScore").innerHTML = langueClassiqueStat;
+
+    const langueCommunX = document.getElementById("langueCommunId");
+    let langueCommunStat = "Acquis";
+    document.getElementById("langueCommunScore").innerHTML = langueCommunStat;
+
+    const langueNainX = document.getElementById("langueNainId");
+    let langueNainStat = "Acquis";
+    document.getElementById("langueNainScore").innerHTML = langueNainStat;
+
+    const langueMystiqueX = document.getElementById("langueMystiqueId");
+    let langueMystiqueStat = "Acquis";
+    document.getElementById("langueMystiqueScore").innerHTML = langueMystiqueStat;
+
+    const sensMagieX = document.getElementById("sensMagieId");
+    let sensMagieStat = "Acquis";
+    document.getElementById("sensMagieScore").innerHTML = sensMagieStat;
+
+    const lireEcrireX = document.getElementById("lireEcrireId");
+    let lireEcrireStat = "Acquis";
+    document.getElementById("lireEcrireScore").innerHTML = lireEcrireStat;
+
+    const metierBrasseurX = document.getElementById("metierBrasseurId");
+    let metierBrasseurStat = "Acquis";
+    document.getElementById("metierBrasseurScore").innerHTML = metierBrasseurStat;
+
+    const metierMaconX = document.getElementById("metierMaconId");
+    let metierMaconStat = "Acquis";
+    document.getElementById("metierMaconScore").innerHTML = metierMaconStat;
+
+    const okX = document.getElementById("ok");
+    const ccBouton = document.getElementById("ccButtonId");
+    const ctBouton = document.getElementById("ctButtonId");
+    const fBouton = document.getElementById("fButtonId");
+    const eBouton = document.getElementById("eButtonId");
+    const agBouton = document.getElementById("agButtonId");
+    const intBouton = document.getElementById("intButtonId");
+    const fmBouton = document.getElementById("fmButtonId");
+    const socBouton = document.getElementById("socButtonId");
+
+    /* FIN COMPETENCES*/
+
+    let de1 = "";
+    let de2 = "";
+
+    /* FONCTIONS COMPETENCES */
+
+    function ccButton() {
+        common.forEach(element => {
+            element.style.background = ""
+        });
+        ccBouton.style.background = "red";
+        stat = "Acquis";
+        carac = cc;
+
+    }
+    function ctButton() {
+        common.forEach(element => {
+            element.style.background = ""
+        });
+        ctBouton.style.background = "red";
+        stat = "Acquis";
+        carac = ct;
+    }
+
+    function fButton() {
+        common.forEach(element => {
+            element.style.background = ""
+        });
+        fBouton.style.background = "red";
+        stat = "Acquis";
+        carac = f;
+    }
+
+    function eButton() {
+        common.forEach(element => {
+            element.style.background = ""
+        });
+        eBouton.style.background = "red";
+        stat = "Acquis";
+        carac = e;
+    }
+
+    function agButton() {
+        common.forEach(element => {
+            element.style.background = ""
+        });
+        agBouton.style.background = "red";
+        stat = "Acquis";
+        carac = ag;
+    }
+
+    function intButton() {
+        common.forEach(element => {
+            element.style.background = ""
+        });
+        intBouton.style.background = "red";
+        stat = "Acquis";
+        carac = int;
+    }
+
+    function fmButton() {
+        common.forEach(element => {
+            element.style.background = ""
+        });
+        fmBouton.style.background = "red";
+        stat = "Acquis";
+        carac = fm;
+    }
+
+    function socButton() {
+        common.forEach(element => {
+            element.style.background = ""
+        });
+        socBouton.style.background = "red";
+        stat = "Acquis";
+        carac = soc;
+    }
+
+    function canotage() {
+        common.forEach(element => {
+            element.style.background = ""
+        });
+        canotageX.style.background = "red";
+        stat = canoStat
+        carac = f;
+    }
+
+    function charisme() {
+        common.forEach(element => {
+            element.style.background = ""
+        });
+        charismeX.style.background = "red";
+        stat = chariStat
+        carac = soc;
+    }
+
+    function commandement() {
+        common.forEach(element => {
+            element.style.background = ""
+        });
+        commandementX.style.background = "red";
+        stat = commaStat
+        carac = soc;
+    }
+
+    function commerages() {
+        common.forEach(element => {
+            element.style.background = ""
+        });
+        commeragesX.style.background = "red";
+        stat = commeStat
+        carac = soc;
+    }
+
+    function conduiteAttelages() {
+        common.forEach(element => {
+            element.style.background = ""
+        });
+        conduiteAttelagesX.style.background = "red";
+        stat = conduStat
+        carac = f;
+    }
+
+    function deguisement() {
+        common.forEach(element => {
+            element.style.background = ""
+        });
+        deguisementX.style.background = "red";
+        stat = deguiStat
+        carac = soc;
+    }
+
+    function deplacementSilencieux() {
+        common.forEach(element => {
+            element.style.background = ""
+        });
+        deplacementSilencieuxX.style.background = "red";
+        stat = deplaStat;
+        carac = ag;
+    }
+
+    function dissimulation() {
+        common.forEach(element => {
+            element.style.background = ""
+        });
+        dissimulationX.style.background = "red";
+        stat = dissimStat
+        carac = ag;
+    }
+
+    function equitation() {
+        common.forEach(element => {
+            element.style.background = ""
+        });
+        equitationX.style.background = "red";
+        stat = equitStat;
+        carac = ag;
+    }
+
+    function escalade() {
+        common.forEach(element => {
+            element.style.background = ""
+        });
+        escaladeX.style.background = "red";
+        stat = escalStat;
+        carac = f;
+    }
+
+    function evaluation() {
+        common.forEach(element => {
+            element.style.background = ""
+        });
+        evaluationX.style.background = "red";
+        stat = evaluStat;
+        carac = int;
+    }
+
+    function fouille() {
+        common.forEach(element => {
+            element.style.background = ""
+        });
+        fouilleX.style.background = "red";
+        stat = fouilStat
+        carac = int;
+    }
+
+    function intimidation() {
+        common.forEach(element => {
+            element.style.background = ""
+        });
+        intimidationX.style.background = "red";
+        stat = intimStat
+        carac = f;
+    }
+
+    function jeu() {
+        common.forEach(element => {
+            element.style.background = ""
+        });
+        jeuX.style.background = "red";
+        stat = jeuStat
+        carac = int;
+    }
+
+    function marchandage() {
+        common.forEach(element => {
+            element.style.background = ""
+        });
+        marchandageX.style.background = "red";
+        stat = marchStat
+        carac = soc;
+    }
+
+    function natation() {
+        common.forEach(element => {
+            element.style.background = ""
+        });
+        natationX.style.background = "red";
+        stat = natatStat
+        carac = f;
+    }
+
+    function perception() {
+        common.forEach(element => {
+            element.style.background = ""
+        });
+        perceptionX.style.background = "red";
+        stat = perceStat
+        carac = int;
+    }
+
+    function resistanceAlcool() {
+        common.forEach(element => {
+            element.style.background = ""
+        });
+        resistanceAlcoolX.style.background = "red";
+        stat = resisStat
+        carac = e;
+    }
+
+    function soinAnimaux() {
+        common.forEach(element => {
+            element.style.background = ""
+        });
+        soinAnimauxX.style.background = "red";
+        stat = soinAStat
+        carac = int;
+    }
+
+    function survie() {
+        common.forEach(element => {
+            element.style.background = ""
+        });
+        survieX.style.background = "red";
+        stat = surviStat
+        carac = int;
+    }
+
+    function connMagie() {
+        common.forEach(element => {
+            element.style.background = ""
+        });
+        connMagieX.style.background = "red";
+        stat = connMagieStat
+        carac = int;
+    }
+
+    function connNains() {
+        common.forEach(element => {
+            element.style.background = ""
+        });
+        connNainsX.style.background = "red";
+        stat = connNainsStat
+        carac = int;
+    }
+
+    function connNecromancie() {
+        common.forEach(element => {
+            element.style.background = ""
+        });
+        connNecromancieX.style.background = "red";
+        stat = connNecromancieStat
+        carac = int;
+    }
+
+    function focalisation() {
+        common.forEach(element => {
+            element.style.background = ""
+        });
+        focalisationX.style.background = "red";
+        stat = focalisationStat
+        carac = fm;
+    }
+
+    function langueClassique() {
+        common.forEach(element => {
+            element.style.background = ""
+        });
+        langueClassiqueX.style.background = "red";
+        stat = langueClassiqueStat
+        carac = int;
+    }
+
+    function langueCommun() {
+        common.forEach(element => {
+            element.style.background = ""
+        });
+        langueCommunX.style.background = "red";
+        stat = langueCommunStat
+        carac = int;
+    }
+
+    function langueMystique() {
+        common.forEach(element => {
+            element.style.background = ""
+        });
+        langueMystiqueX.style.background = "red";
+        stat = langueMystiqueStat
+        carac = int;
+    }
+
+    function langueNain() {
+        common.forEach(element => {
+            element.style.background = ""
+        });
+        langueNainX.style.background = "red";
+        stat = langueNainStat
+        carac = int;
+    }
+
+    function lireEcrire() {
+        common.forEach(element => {
+            element.style.background = ""
+        });
+        lireEcrireX.style.background = "red";
+        stat = lireEcrireStat
+        carac = int;
+    }
+
+    function metierBrasseur() {
+        common.forEach(element => {
+            element.style.background = ""
+        });
+        metierBrasseurX.style.background = "red";
+        stat = metierBrasseurStat
+        carac = int;
+    }
+
+    function metierMacon() {
+        common.forEach(element => {
+            element.style.background = ""
+        });
+        metierMaconX.style.background = "red";
+        stat = metierMaconStat
+        carac = ag;
+    }
+
+    function sensMagie() {
+        common.forEach(element => {
+            element.style.background = ""
+        });
+        sensMagieX.style.background = "red";
+        stat = sensMagieStat
+        carac = fm;
+    }
+
+    function envoyer() {
+        de1 = (Math.random() * 9).toFixed(0);
+        de2 = (Math.random() * 9).toFixed(0);
+
+        if (stat == "-50%") {
+            barem = parseInt(carac) / 2;
+        }
+        else if (stat == "Acquis") {
+            barem = carac;
+        }
+        else if (stat == "+10") {
+            barem = parseInt(carac) + 10;
+        }
+        else if (stat == "+20") {
+            barem = parseInt(carac) + 20;
+        }
+
+        if (de1 + de2 <= barem) {
+            document.getElementById("de1").innerHTML = de1;
+            document.getElementById("de2").innerHTML = de2;
+            document.getElementById("commentaire").innerHTML = "GAGNÉ !";
+            document.getElementById("commentaire").style.color = "green";
+            document.getElementById("result").innerHTML = " Berthold a " + barem + " dans cette compétence.";
+        }
+        else {
+            document.getElementById("de1").innerHTML = de1;
+            document.getElementById("de2").innerHTML = de2;
+            document.getElementById("commentaire").innerHTML = "PERDU !";
+            document.getElementById("commentaire").style.color = "rgb(207, 0, 0)";
+            document.getElementById("result").innerHTML = " Berthold a " + barem + " dans cette compétence.";
+        }
+    }
+
+    function refresh() {
+        common.forEach(element => {
+            element.style.background = ""
+        });
+        document.getElementById("de1").innerHTML = "";
+        document.getElementById("de2").innerHTML = "";
+        document.getElementById("commentaire").innerHTML = "";
+        document.getElementById("result").innerHTML = ""
+    }
+    /*
+    const xpBase = 700;
+    let xpGive = ""
+    let xpDepenseX = ""
+    let xpTotalX = ""
+
+    function gainXp() {
+        xpGive = parseInt(prompt("Saisissez la valeur d'expérience acquise :"));
+
+
+        document.getElementById("xpDisponible").innerHTML = xpGive;
+        xpTotalX = parseInt(xpBase) + xpGive;
+        document.getElementById("xpTotal").innerHTML = xpTotalX;
+        xpDepenseX = parseInt(xpTotalX) - xpGive;
+        document.getElementById("xpDepense").innerHTML = xpDepenseX;
+    }
+
+     let xpDepense=parseInt(700)+xpGet; 
+     Faire les boutons d'activation de l'xp en face des skills */
+
+</script>
+
+</html>

@@ -1,0 +1,13 @@
+<?xml version = '1.0' encoding = 'UTF-8' ?>
+<widget
+    android-vesioncode = '1'
+    id = 'com.gGaban.Berthold'
+    version = '1.0.0'
+    xmlns = 'https://www.w3.org/ns/widgets'>
+
+    <name>Berthold</name>
+    <description>Système de lancers de dés pour Berthold Bravin</description>
+    <author>gGaban</author>
+
+    <preference name = 'orientation' value ='portrait'/>
+</widget>
